@@ -61,3 +61,5 @@ print(
     EvalLuaHTMLFile("var/www/site.com/pages/index.lua.html")
 )
 ]]--
+
+return EvalLuaHTML, EvalLuaHTMLFile
