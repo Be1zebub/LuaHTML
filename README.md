@@ -11,7 +11,7 @@ Luahtml:
 
 PHP:
 ```
-<h1><?php echo("Test")</h1>
+<h1><?php echo("Test") ?></h1>
 ```
 
 Usage:
