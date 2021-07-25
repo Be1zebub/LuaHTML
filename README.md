@@ -13,3 +13,9 @@ PHP:
 ```
 <h1><?php echo("Test")</h1>
 ```
+
+Usage:
+```
+local result_html = EvalLuaHTML("<h1><lua> print('Test') </lua></h1>")
+local result_html = EvalLuaHTMLFile("var/www/site.com/pages/index.lua.html")
+```
