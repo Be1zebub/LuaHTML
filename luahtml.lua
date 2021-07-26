@@ -19,10 +19,11 @@ sbox.print = function(...)
 end
 
 function EvalLuaHTML(luahtml)
-    lines = {}
     local error = false
 
     local output = string.gsub(luahtml, "<lua>(.-)</lua>", function(code)
+        lines = {}
+
         local fn, syntaxError = load(code, "<lua>...</lua>", "t", sbox)
         if not fn then
             error = (error and error .."\n" or "") .. syntaxError
@@ -35,7 +36,7 @@ function EvalLuaHTML(luahtml)
             return ""
         end
 
-        return ""
+        return table.concat(lines, "\n")
     end)
 
     return error or output
