@@ -39,7 +39,7 @@ function EvalLuaHTML(luahtml)
         return table.concat(lines, "\n")
     end)
 
-    return error or output
+    return error or output, not error
 end
 
 --[[
