@@ -9,7 +9,7 @@ local pages = {
 local domain = "incredible-gmod.ru"
 local http_port, https_port = 80, 443 
 
-local EvalLuaHTML, EvalLuaHTMLFile = require("luahtml.lua")
+local EvalLuaHTML, EvalLuaHTMLFile = require("luahtml")
 local http, https, fs = require("http"), require("https"), require("fs")
 
 local path_patterns = {
