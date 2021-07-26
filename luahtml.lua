@@ -1,5 +1,5 @@
 local lines = {}
-local alive, die_reason = false
+local alive, die_reason = false, ""
 
 local sbox = setmetatable({}, { __index = _G })
 
@@ -27,7 +27,7 @@ end
 
 function EvalLuaHTML(luahtml)
     local error = false
-    alive = true
+    alive, die_reason = true, ""
 
     local output = string.gsub(luahtml, "<lua>(.-)</lua>", function(code)
         lines = {}
