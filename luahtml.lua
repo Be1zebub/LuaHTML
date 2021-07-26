@@ -1,4 +1,6 @@
 local lines = {}
+local alive, die_reason = false
+
 local sbox = setmetatable({}, { __index = _G })
 
 local function printLine(...)
@@ -18,8 +20,14 @@ sbox.print = function(...)
     table.insert(lines, printLine(...))
 end
 
+sbox.die = function(str)
+    alive = false
+    die_reason = str or ""
+end
+
 function EvalLuaHTML(luahtml)
     local error = false
+    alive = true
 
     local output = string.gsub(luahtml, "<lua>(.-)</lua>", function(code)
         lines = {}
@@ -38,6 +46,8 @@ function EvalLuaHTML(luahtml)
 
         return table.concat(lines, "\n")
     end)
+    
+    if alive == false then return die_reason end
 
     return error or output, not error
 end
@@ -63,4 +73,4 @@ print(
 )
 ]]--
 
-return EvalLuaHTML, EvalLuaHTMLFile
+return {eval = EvalLuaHTML, evalfile = EvalLuaHTMLFile}
