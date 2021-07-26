@@ -1,0 +1,3 @@
+[submodule "LuvitWEB (luvit-binding)"]
+    path = LuvitWeb
+    url = https://github.com/Be1zebub/LuvitWeb
