@@ -1,3 +1,6 @@
+# Depreated
+it was a bad idea, i got a new one: https://github.com/Be1zebub/lua-template (recommened to use it)
+
 # LuaHTML
 pre-processor for mixed html code with lua.  
 it works like `<?php ... ?>` but codeblocks looks like: `<lua>...</lua>`
